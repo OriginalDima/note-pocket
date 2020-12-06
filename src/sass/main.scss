@@ -1,0 +1,146 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: lightblue;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  margin-top: 30px;
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#new-note {
+  width: 300px;
+
+  #title {
+    letter-spacing: 1px;
+    margin-top: 10px;
+    width: 300px;
+    padding: 10px;
+    border: 0;
+  }
+
+  #content {
+    letter-spacing: 1px;
+    margin-top: 10px;
+    width: 300px;
+    height: 200px;
+    padding: 10px;
+    border: 0;
+  }
+
+  .note-background {
+    letter-spacing: 1px;
+    margin-top: 10px;
+    display: flex;
+
+    .color-wrapper {
+      display: flex;
+
+      .violet,
+      .green,
+      .yellow,
+      .blue {
+        display: flex;
+        margin-left: 5px;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .violet {
+        background-color: rgba($color: violet, $alpha: .7);
+      }
+
+      .green {
+        background-color: rgba($color: green, $alpha: .7);
+      }
+
+      .yellow {
+        background-color: rgba($color: yellow, $alpha: .7);
+      }
+
+      .blue {
+        background-color: rgba($color: blue, $alpha: .7);
+      }
+    }
+  }
+
+  .is-pinned {
+    letter-spacing: 1px;
+  }
+
+  #is-pinned {
+    margin-top: 10px;
+  }
+
+  #add-new-note {
+    letter-spacing: 1px;
+    margin-top: 10px;
+    width: 300px;
+    padding: 10px;
+    border: 0;
+    background-color: #ffffff;
+    cursor: pointer;
+  }
+}
+
+#notes {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  .note {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    background-color: rgba($color: yellow, $alpha: .7);
+    margin: 20px;
+    padding: 10px;
+
+    &.is-pinned {
+      border-top: 5px solid #000;
+    }
+
+    h2 {
+      margin: 10px 0;
+    }
+
+    .delete-btn,
+    .edit-btn {
+      opacity: 0;
+      position: absolute;
+      right: 10px;
+      bottom: 10px;
+      cursor: pointer;
+      font-weight: 700;
+      color: red;
+      transition: 0.5s ease all;
+
+      &__active {
+        opacity: 1;
+      }
+    }
+
+    .edit-btn {
+      color: black;
+      right: 65px;
+    }
+  }
+}
